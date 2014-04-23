@@ -1,0 +1,1 @@
+The application consists of a fully functional drawing program which allows the user to draw any kind of graphical image and save it on the hard drive.
