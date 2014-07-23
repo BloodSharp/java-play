@@ -37,3 +37,7 @@ The PaintToolPanel also contains a JComboBox and its action event, for choosing 
 The ToolButton class  extends  JButton  and  implements  ActionListener. Its constructor  receives  a Tool  class  instance  which  is  passed  to  the  DrawingPanel’s currentTool upon   triggering   the actionPerformed method (when the tool button is clicked).The ToolDetails class extends the Tool class and provides methods for customizing the color and the stroke of the brush.
 
 The StrokeToolPanel class  creates  instances  of  the StrokePanel(used  to  display  the  current stroke) and JSlider(used to change the current stroke) classes, and adds them to the panel.
+
+### The Factory Method Pattern
+
+The ToolFactory class implements the Factory Method pattern and provides a method for creating Tool class  instances.  It  contains  eleven  static  constant  variables  used  by  the  caller  of  the  factory method to provide the corresponding input parameter, and eleven instance variables used to keep the  created Toolclass instances.  The  switch  statement  inside  of  the  method  uses  the  inputted parameter and checks if the corresponding instance is already created. If the object is null, it creates and returns the new instance.
