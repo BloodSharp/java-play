@@ -41,3 +41,7 @@ The StrokeToolPanel class  creates  instances  of  the StrokePanel(used  to  dis
 ### The Factory Method Pattern
 
 The ToolFactory class implements the Factory Method pattern and provides a method for creating Tool class  instances.  It  contains  eleven  static  constant  variables  used  by  the  caller  of  the  factory method to provide the corresponding input parameter, and eleven instance variables used to keep the  created Toolclass instances.  The  switch  statement  inside  of  the  method  uses  the  inputted parameter and checks if the corresponding instance is already created. If the object is null, it creates and returns the new instance.
+
+### Drawing an Image on the Screen
+
+The DrawingPanel class   extends   the   JPanel   class   and   implements   the   MouseListener   and MouseMotionListener interfaces. The class’ constructor customizes the panel’s appearance and creates  a  new  instance  of  the  PENCIL_TOOL Toolclass  (using  the ToolFactorymethod)  and  the PENCIL_TOOL ToolDetailsclass,  and  assigns  them  to  the currentTooland currentToolDetailsvariables. The drawGraphics()method  is  used  to  draw  shapes  in  the  graphicscontext.  The Toolparameter determines which shape will be drawn, while the integer variables determine coordinates or corners of the shapes. Figure 5shows the source code of the method in charge of drawing a straight line on the screen.
