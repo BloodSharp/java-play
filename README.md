@@ -47,3 +47,10 @@ The ToolFactory class implements the Factory Method pattern and provides a metho
 The DrawingPanel class   extends   the   JPanel   class   and   implements   the   MouseListener   and MouseMotionListener interfaces. The class’ constructor customizes the panel’s appearance and creates  a  new  instance  of  the  PENCIL_TOOL Tool class  (using  the ToolFactory method)  and  the PENCIL_TOOL ToolDetailsclass,  and  assigns  them  to  the currentTooland currentToolDetailsvariables. The drawGraphics()method  is  used  to  draw  shapes  in  the  graphics context.  The Tool parameter determines which shape will be drawn, while the integer variables determine coordinates or corners of the shapes.
 
 The mouse events are called when the user presses or moves the mouse inside of the panel. As an example, figure 6shows the source code of the mouseDragged method which is called whenever the user  moves  the  mouse  while  the  mouse  button  is  down.  If  the  useris  drawing  a  curve  (the PENCIL_TOOL, ERASER_TOOL, or AIR_BRUSH_TOOL is selected), the method draws a segment of the curve on the off-screen image, and repaints the part of the panel that contains the new line segment. Otherwise, if the user is drawing shapes, it calls repaint and lets the paintComponent()method draw the shape on top of the picture in the off-screen image.
+
+### Changing Bruch Color
+
+The application contains three classes that deal with changing the color of the brush.
+
+- The ToolFactory class  provides  a  COLOR_PICKER_TOOL  constant  variable  used  to  create  a new instance of the Tool class, and open a JColorChooser on button click.
+- The ColorButton class represent the small color box located in the ColorPalette, and sets the color of the brush on button click
