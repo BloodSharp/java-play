@@ -48,9 +48,19 @@ The DrawingPanel class   extends   the   JPanel   class   and   implements   the
 
 The mouse events are called when the user presses or moves the mouse inside of the panel. As an example, figure 6shows the source code of the mouseDragged method which is called whenever the user  moves  the  mouse  while  the  mouse  button  is  down.  If  the  useris  drawing  a  curve  (the PENCIL_TOOL, ERASER_TOOL, or AIR_BRUSH_TOOL is selected), the method draws a segment of the curve on the off-screen image, and repaints the part of the panel that contains the new line segment. Otherwise, if the user is drawing shapes, it calls repaint and lets the paintComponent()method draw the shape on top of the picture in the off-screen image.
 
-### Changing Bruch Color
+### Changing Brush Color
 
 The application contains three classes that deal with changing the color of the brush.
 
 - The ToolFactory class  provides  a  COLOR_PICKER_TOOL  constant  variable  used  to  create  a new instance of the Tool class, and open a JColorChooser on button click.
 - The ColorButton class represent the small color box located in the ColorPalette, and sets the color of the brush on button click
+- The ColorPalette class creates  all  the ColorButton instances  with  92  different  colors
+- The ColorPanel class represents the currently selected color, and opens a JColorChooser on mouse click
+
+### Changing Brush stroke
+
+The StrokeToolPanel class uses the JSlider to set the stroke of the brush, and a JPanel (StrokePanel) to show the currently selected stroke.
+
+### Saving and Loading Images
+
+The MenuBar class extends the JMenuBar and displays a menu on the top side of the application. It consists of threeJMenu classes: File, Viewand Help. The File JMenu contains New File, Open File, Save File and Exit  application menu  items,  with  corresponding  ActionListeners.  Figure  11shows  the source code of the actionPerformed method, triggered when one of the menu items is clicked.
