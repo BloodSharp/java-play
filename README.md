@@ -64,3 +64,11 @@ The StrokeToolPanel class uses the JSlider to set the stroke of the brush, and a
 ### Saving and Loading Images
 
 The MenuBar class extends the JMenuBar and displays a menu on the top side of the application. It consists of threeJMenu classes: File, Viewand Help. The File JMenu contains New File, Open File, Save File and Exit  application menu  items,  with  corresponding  ActionListeners.  Figure  11shows  the source code of the actionPerformed method, triggered when one of the menu items is clicked.
+
+If the New file menu item is clicked, a new BufferedImage is created and passed to the DrawingPanel class’ setImage method (so that a blank image is displayed in the panel).
+
+If the Save file menu item if clicked, a JFileChooser is shown to the user to select the desired location on  the  hard  drive  where  the  image  will  be  saved.
+
+Upon  clicking  OK  on  the  File  chooser,  the DrawingPanel’s getScreenShot()method is called and the received image saved on the hard drive using the ImageIO.write()method.
+
+If the Open file menu item is clicked, a JFileChooser is shown to the user to select the desire image. The selected image is passed to the DrawingPanel’s setOSImage()method, using the ImageIO.read()method.If the Help or About menu items are clicked, a JOptionPane containing explanation text is shown to the user.
